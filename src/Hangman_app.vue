@@ -78,7 +78,6 @@ export default {
       guessedLetters: [],
       guesserCount: 0,
       currentGuess: "",
-      maxGuesses: 100,
       wrongGuesses: 0,
       rightGuesses: 0,
       startGameState: false,
@@ -98,6 +97,7 @@ export default {
     startGame(){
       this.startGameState = true;
       this.finishGameState = false;
+      this.guesserCount = 0;
       this.rightGuesses = 0;
       this.wrongGuesses = 0;
       this.guessedLetters = [];
