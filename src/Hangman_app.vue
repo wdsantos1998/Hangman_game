@@ -98,6 +98,7 @@ export default {
     startGame(){
       this.startGameState = true;
       this.finishGameState = false;
+      this.rightGuesses = 0;
       this.wrongGuesses = 0;
       this.guessedLetters = [];
       this.currentWord = this.wordsToGuess[Math.floor(Math.random() * this.wordsToGuess.length)].word;
@@ -130,7 +131,7 @@ export default {
       this.currentGuess = "";
     },
     checkGame(){
-      if (this.rightGuesses === this.currentWord.length) {
+      if (!this.displayWord.includes("_")) {
         this.startGameState = false;
         this.finishGameState = true;
         this.isGameOver = true;
